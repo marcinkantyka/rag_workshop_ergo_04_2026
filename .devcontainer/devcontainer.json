@@ -1,0 +1,22 @@
+{
+  "name": "RAG Workshop",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "workshop",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.extraPaths": ["/workspace"],
+        "editor.formatOnSave": false
+      }
+    }
+  }
+}

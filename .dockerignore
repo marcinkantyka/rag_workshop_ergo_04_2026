@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Generated data (re-created at runtime)
+chroma_db/
+data/raw/
+data/rag_results.json
+data/experiment_log.json
+data/experiment_log_export.csv
+
+# Secrets — never bake into the image
+.env
+
+# Git
+.git/
+.gitignore
+
+# Editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,2156 @@
+description: RAG Pipeline Evaluation — DKV Workshop
+providers:
+- id: echo
+prompts:
+- '{{answer}}'
+defaultTest:
+  options:
+    provider:
+      id: openai:chat:claude-haiku-4-5
+      config:
+        apiBaseUrl: ${NETLIGHT_BASE_URL}
+        apiKey: ${NETLIGHT_API_KEY}
+tests:
+- vars:
+    question: What hospitalization expenses does DKV cover?
+    answer: '# DKV Hospitalization Coverage
+
+
+      According to the provided context, DKV covers the following hospitalization-related
+      expenses:
+
+
+      **Covered Medical Expenses:**
+
+      - Medical and paramedical treatments [1][3][5]
+
+      - Medical devices [1][3][5]
+
+      - Medicines and drugs [1][4]
+
+      - Bandages and medical material [1][3][5]
+
+      - All items must be on medical prescription by a physician [1][3][5]
+
+
+      **Additional Covered Items:**
+
+      - Wig costs up to €1,250 [4]
+
+      - Psychotherapeutic treatment costs when dispensed by a licensed psychiatrist
+      [4]
+
+      - Medically assisted procreation (subject to prior approval and reimbursement
+      from legal/statutory health insurance) [4]
+
+
+      **Expenses Requiring Prior DKV Approval:**
+
+      - Rental or purchase of medical devices (except spectacle glasses, contact lenses,
+      fully non-implantable hearing aids, trusses for hernia, varicose vein stockings,
+      orthopedic soles, plaster casts, lumbar corsets, splints, and crutches) [1][3][5]
+
+      - Dental treatments (with treatment plan and accurate cost estimate) [1][3][5]
+
+      - Reconstructive plastic surgery (with accurate cost estimate) [1][3][5]
+
+
+      **Note:** For Premium+ plans, alternative treatments are also covered [2].'
+    ground_truth: DKV hospitalisation insurance covers accommodation costs (single
+      room up to EUR 150 per day, double room up to EUR 100 per day, shared ward in
+      full), medical fees from physicians and surgeons based on the NIHDI rate plus
+      supplements capped at 200%, medications and medical equipment at 100% of actual
+      costs, and diagnostic examinations in full.
+    contexts: '[1] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic
+
+      ---
+
+      [2] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical, paramedical
+      and alternative treatments, medical devices, medicines, bandages and medical
+      material on medical prescription by a physician  Reimbursement of the costs
+      listed below is subject to prior approval by DKV:  Rental or purchase of medical
+      devices, except spectacle glasses or contact lenses, fully non-implantable hearing
+      aids, trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+
+      ---
+
+      [3] of the start of a hospitalization or due to a winter sports accident on
+      a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic surgery. When and how do I pay? DKV sends you an invitation to pay your
+      annual premium. You can request half-yearly, quarterly or monthly payments (via
+      SEPA direct debit only) of your premium, in which case a splitting fee will
+      be
+
+      ---
+
+      [4] insurance does not helicopter from the scene of the accident to the intervene
+      in pre/post costs or critical illnesses, the hospital. reimbursement level of
+      the insurer is reduced by ✓ Third-party payment: Medi-Card® : direct payment
+      of 50%. the hospital bill to the hospital ! Medicines/drugs, bandages and medical
+      equipment ✓ Services: in the context of pre-post costs and critical diseases
+      ✓ AssurPharma: sends immediately the pharmacy are reimbursed at 80%, or 40%
+      if the statutory/legal bills to DKV health insurance does not intervene. ✓ Worldwide
+      assistance and repatriation in the ! Costs of a wig up to €1,250. event of urgent,
+      unforeseen and unplanned ! Psychotherapeutic treatment costs when dispensed
+      hospitalisation by a licensed psychiatrist. ✓ DKV App: free app for scanning
+      and sending all ! Reimbursement of medically assisted procreation medical expenses
+      for faster processing subject to prior approval and reimbursement from ✓ My
+      DKV: personal online portal for submitting legal/statutory health insurance.
+      medical expenses and documents quickly, safely and easily, and also checking
+      refunds DKV Belgium S.A./N.V. | rue de Loxum 25 Loksumstraat | 1000 Bruxelles/Brussel
+      | Tel.: +32 (0)2 287 64 11 | www.dkv.be R.P.M./ R.P.R. 0414858607 | Entreprise
+      d’assurances agréée sous le n° 739, sous
+
+      ---
+
+      [5] for the “Assistance abroad” DKV ASSISTANCE cover, within 48 hours of the
+      start of a hospitalization or due to a winter sports accident on a ski slope
+      without hospitalization, or as soon as reasonably possible, (2) in writing for
+      the "Medical costs" cover and preferably by using the digital customer portal
+      (My DKV) or the smartphone application (DKV App) provided by DKV  Notify DKV
+      of the existence of any other agreement that may give rise to a total or partial
+      reimbursement of the actual borne costs  Medical and paramedical treatments,
+      medical devices, medicines, bandages and medical material on medical prescription
+      by a physician  Reimbursement of the costs listed below is subject to prior
+      approval by DKV:  Rental or purchase of medical devices, except spectacle glasses
+      or contact lenses, fully non-implantable hearing aids, trusses for hernia, stockings
+      for varicose veins, orthopedic soles, plaster casts, lumbar corsets, splints
+      and crutches;  Treatment plan with accurate cost estimate for dental treatments;
+       Accurate cost estimate for reconstructive plastic surgery. WHEN AND HOW DO
+      I PAY? DKV sends you an invitation to pay your annual premium. You can request
+      half-yearly, quarterly or monthly payments (via SEPA direct debit only) of'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What is the annual excess for DKV hospitalisation insurance?
+    answer: 'According to [1], the annual excess for DKV hospitalisation insurance
+      is:
+
+
+      • **EUR 250 per insured person** for standard hospitalisation costs
+
+      • **EUR 500** for hospitalisations related to elective pregnancy or non-reconstructive
+      cosmetic surgery
+
+      • **No excess applies** to insured children under 16 years of age'
+    ground_truth: An annual excess of EUR 250 per insured person applies to hospitalisation
+      costs. This rises to EUR 500 for hospitalisations related to elective pregnancy
+      or non-reconstructive cosmetic surgery. The excess does not apply to insured
+      children under 16 years of age.
+    contexts: '[1] Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an honorary supplement capped at 200% of the agreed rate. 3.3 Medication
+      and medical equipment Medications prescribed during hospitalisation and necessary
+      medical equipment are reimbursed at 100% of actual costs, with no excess. 3.4
+      Diagnostic examinations Laboratory, radiological, and medical imaging examinations
+      performed in a hospital setting are reimbursed in full. ═══════════════════════════════════════════════════════════════
+      ARTICLE 4 — EXCESS AND PERSONAL CONTRIBUTION 4.1 Annual excess An annual excess
+      of EUR 250 per insured person applies to hospitalisation costs. This excess
+      rises to EUR 500 for hospitalisations related to elective pregnancy or non-reconstructive
+      cosmetic surgery. 4.2 No excess for children The excess does not apply to insured
+      children under 16 years of age. 4.3 Personal contribution for single room When
+      hospitalised in a single room, the insured bears 15% of honorary supplements
+      exceeding EUR 300 per stay. ═══════════════════════════════════════════════════════════════
+      ARTICLE 5 — STAY IN A NURSING HOME 5.1 Conditions for coverage DKV covers nursing
+      home (RVT/MRS) accommodation costs provided that: - The preceding hospitalisation
+      lasted at least 5 consecutive days - Transfer to the nursing home occurs within
+      30 days of hospital discharge - A medical
+
+      ---
+
+      [2] physician  Reimbursement of the costs listed below is subject to prior
+      approval by DKV:  Rental or purchase of medical devices, except spectacle glasses
+      or contact lenses, fully non-implantable hearing aids, trusses for hernia, stockings
+      for varicose veins, orthopedic soles, plaster casts, lumbar corsets, splints
+      and crutches;  Treatment plan with accurate cost estimate for dental treatments;
+       Accurate cost estimate for reconstructive plastic surgery. WHEN AND HOW DO
+      I PAY? DKV sends you an invitation to pay your annual premium. You can request
+      half-yearly, quarterly or monthly payments (via SEPA direct debit only) of your
+      premium, in which case a splitting fee will be charged. WHEN DOES THE COVER
+      START AND END? Term of the contract: lifetime cover, which cannot be cancelled
+      by DKV except for the cases provided for by law. The insurance guarantee begins
+      after issuance of the policy, after the expiration of the qualifying periods
+      and after the payment of the first agreed premium. DKV may cancel the insurance
+      contract in case of non-payment of the premium. HOW CAN I CANCEL MY CONTRACT?
+      As prescribed by law, you may terminate your insurance contract at every annual
+      renewal date by notifying DKV no later than three
+
+      ---
+
+      [3] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE Product:
+      DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [4] years (where applicable in function of the annual annuity).  Inform the
+      insurer in case of change of domicile, of social security system and/or social
+      security status, of practiced professional activities, the disappearance or
+      resumption of professional activities, the existence of an agreement covering
+      a similar or identical risk of any circumstance guaranteeing the maintenance
+      of the insured’s professional income through his employer or otherwise, or benefiting
+      from other financial interventions in case of working disability.  Every insurance
+      case (the occurrence, extension, change and the end) must be reported to the
+      insurer electronically or in writing, using the designated declaration form
+      and the within set out time limit. WHEN AND HOW DO I PAY ? DKV sends you an
+      invitation to pay your annual premium. You can request half-yearly, quarterly
+      or monthly payments (via SEPA direct debit only) of your premium, in which case
+      a splitting fee will be charged. WHEN DOES THE COVER START AND END ? Term of
+      the contract: non-cancellable by the insurer except for the cases provided for
+      by law. For the plans GI and Continuity +: automatically ends at the age of
+      65 at the latest, either at the end of the agreed reduced
+
+      ---
+
+      [5] For hospitalizations outside the European Union, DKV reimburses up to a
+      maximum of € 300.000 per insurance case.  Cover in Member States of the European
+      Union (excluding overseas territories): for any medically necessary and planned
+      hospitalization abroad, provided a prior agreement has been obtained with the
+      health insurance fund  Cover in Belgium: for outpatient consultations and/or
+      treatments in the pre- and post-hospitalization period of a covered hospitalization,
+      within the context of "Critical Illnesses", of non-medical care support within
+      the context of "Critical Illnesses", medically assisted procreation  “Assistance
+      abroad” DKV ASSISTANCE cover  Worldwide cover: for any medically necessary,
+      unforeseen hospitalization abroad provided that the insured person does not
+      temporarily stay abroad for more than 90 consecutive days. This period is extended
+      to 6 months in the case of temporary actual residence in Member States of the
+      European Union (excluding overseas territories) of students, under the age of
+      26, when this is within the continuity of their studies under unilateral or
+      multilateral programmes or an agreement between two or more institutions of
+      higher education What are my obligations?  Correctly complete and sign an insurance
+      proposal, which consists of an administrative and medical questionnaire, except
+      in case of'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What nursing home coverage does DKV provide after a hospital stay?
+    answer: 'According to [1], DKV provides the following nursing home coverage after
+      a hospital stay:
+
+
+      **Eligibility Requirements:**
+
+      - Hospitalisation of at least 5 consecutive days
+
+      - Transfer to the nursing home occurs within 30 days of hospital discharge
+
+      - A medical certificate confirms the necessity of the placement
+
+
+      **Coverage Limits:**
+
+      - **Maximum duration:** 90 days per insurance year
+
+      - **Reimbursement amount:** Up to EUR 75 per day in a nursing home, after deduction
+      of the compulsory health insurance contribution'
+    ground_truth: DKV covers nursing home accommodation costs up to EUR 75 per day,
+      limited to 90 days per insurance year, provided the preceding hospitalisation
+      lasted at least 5 consecutive days, transfer to the nursing home occurs within
+      30 days of hospital discharge, and a medical certificate confirms the necessity.
+    contexts: '[1] least 5 consecutive days - Transfer to the nursing home occurs
+      within 30 days of hospital discharge - A medical certificate confirms the necessity
+      of the placement 5.2 Maximum duration Nursing home coverage is limited to 90
+      days per insurance year. 5.3 Reimbursed amount DKV reimburses up to EUR 75 per
+      day in a nursing home, after deduction of the compulsory health insurance contribution.
+      ═══════════════════════════════════════════════════════════════ ARTICLE 6 —
+      MATERNITY 6.1 Childbirth Hospital childbirth costs are covered without excess,
+      provided the insured has been enrolled in the contract for at least 10 months.
+      6.2 Pregnancy expenses Antenatal consultations, ultrasound examinations (maximum
+      3 per pregnancy), and pregnancy-related blood tests are reimbursed at 80%. 6.3
+      Extended maternity stay If a newborn requires extended neonatal care, DKV covers
+      the mother''s additional hospitalisation costs if she remains hospitalised for
+      medical reasons. ═══════════════════════════════════════════════════════════════
+      ARTICLE 7 — CARE ABROAD 7.1 Emergency care In the event of a medical emergency
+      abroad, DKV reimburses medical and hospitalisation costs without limit, provided
+      DKV is notified within 48 hours of admission. 7.2 Planned care abroad Planned
+      care in another EU country is reimbursed according to Belgian reference rates.
+      Any costs in excess remain at the insured''s expense. 7.3 Repatriation Medical
+      repatriation
+
+      ---
+
+      [2] security status or of a stay abroad for more than 90 consecutive days. 
+      Prior consent of the insurer for: - paramedical treatments other than nursing
+      care, kinesitherapy, physiotherapy; - medical devices; - orthodontic and/or
+      prosthetic treatment. Not subject to any prior authorization: spectacle glasses,
+      contact lenses, hearing aids, trusses for hernia, stockings for varicose veins,
+      orthopedic soles, plaster casts, lumbar corset, splints and crutches  Medical
+      devices, medication, bandages and medical material on prescription from a physician.
+       Each insurance claim must be reported to the insurer in writing within the
+      designated period, preferably using the digital reporting tools (My DKV or DKV
+      App), or by (electronic) mail.  The insured undertakes all steps to obtain
+      reimbursement from his/her health insurance fund. WHEN AND HOW DO I PAY ? DKV
+      sends you an invitation to pay your premium, which is payable at the agreed
+      periodicity. WHEN DOES THE COVER START AND END ? Term of the contract: yearly
+      renewable contract according to the conditions in force. The insurance guarantee
+      begins after issuing of the policy and after the expiration of the qualifying
+      periods and after payment of the agreed premium. The insurer may cancel the
+      insurance contract in case
+
+      ---
+
+      [3] stay abroad for more than 90 consecutive days.  Prior consent of the insurer
+      for: - paramedical treatments other than nursing care, kinesitherapy, physiotherapy;
+      - medical devices. Not subject to any prior authorization: spectacle lenses,
+      contact lenses, hearing aids, trusses for hernia, stockings for varicose veins,
+      orthopedic soles, plaster casts, lumbar corset, splints and crutches.  Medical
+      devices, medication, bandages and medical material on prescription from a physician.
+       Each insurance claim must be reported to the insurer in writing within the
+      designated period, preferably using the digital reporting tools (My DKV or DKV
+      App), or by (electronic) mail.  The insured undertakes all steps to obtain
+      reimbursement from his/her health insurance fund. WHEN AND HOW DO I PAY ? DKV
+      sends you an invitation to pay your premium, which is payable at the agreed
+      periodicity. WHEN DOES THE COVER START AND END ? Term of the contract: yearly
+      renewable contract according to the conditions in force. The insurance guarantee
+      begins after issuing of the policy and after payment of the agreed premium.
+      The insurer may cancel the insurance contract in case of non-payment of the
+      premium. HOW CAN I CANCEL THE CONTRACT ? As prescribed by law, you may
+
+      ---
+
+      [4] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE Product:
+      DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [5] than 90 consecutive days.  Prior consent of the insurer for: - paramedical
+      treatments other than nursing care, kinesitherapy, physiotherapy; - medical
+      devices. Not subject to any prior authorization: spectacle glasses, contact
+      lenses, hearing aids, trusses for hernia, stockings for varicose veins, orthopedic
+      soles, plaster casts, lumbar corset, splints and crutches  Medical devices,
+      medication, bandages and medical material on prescription from a physician.
+       Each insurance claim must be reported to the insurer in writing within the
+      designated period, preferably using the digital reporting tools (My DKV or DKV
+      App), or by (electronic) mail.  The insured undertakes all steps to obtain
+      reimbursement from his/her health insurance fund. WHEN AND HOW DO I PAY ? DKV
+      sends you an invitation to pay your premium, which is payable at the agreed
+      periodicity. WHEN DOES THE COVER START AND END ? Term of the contract: yearly
+      renewable contract according to the conditions in force. The insurance guarantee
+      begins after issuing of the policy and after the expiration of the qualifying
+      periods and after payment of the agreed premium. The insurer may cancel the
+      insurance contract in case of non-payment of the premium. HOW CAN I CANCEL THE
+      CONTRACT ? As prescribed'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What are the main exclusions under DKV hospitalisation insurance?
+    answer: "The provided context does not contain enough information to answer this\
+      \ question.\n\nWhile the context includes details about DKV hospitalisation\
+      \ coverage and what IS covered (such as accommodation costs, medical fees, and\
+      \ specific services), it does not provide a comprehensive list of exclusions\
+      \ under DKV hospitalisation insurance. \n\nTo get complete information about\
+      \ exclusions, you would need to review the full policy terms and conditions\
+      \ document, particularly the sections explicitly titled \"Exclusions\" or \"\
+      What is not covered.\""
+    ground_truth: 'DKV hospitalisation insurance does not cover: aesthetic treatments
+      with no reconstructive purpose, detoxification treatments not medically prescribed,
+      dental care (unless resulting from a covered accident), experimental treatments
+      not recognised by NIHDI, accidents from professional or high-risk competitive
+      sport, and pre-existing conditions not declared at enrolment.'
+    contexts: '[1] For hospitalizations outside the European Union, DKV reimburses
+      up to a maximum of € 300.000 per insurance case.  Cover in Member States of
+      the European Union (excluding overseas territories): for any medically necessary
+      and planned hospitalization abroad, provided a prior agreement has been obtained
+      with the health insurance fund  Cover in Belgium: for outpatient consultations
+      and/or treatments in the pre- and post-hospitalization period of a covered hospitalization,
+      within the context of "Critical Illnesses", of non-medical care support within
+      the context of "Critical Illnesses", medically assisted procreation  “Assistance
+      abroad” DKV ASSISTANCE cover  Worldwide cover: for any medically necessary,
+      unforeseen hospitalization abroad provided that the insured person does not
+      temporarily stay abroad for more than 90 consecutive days. This period is extended
+      to 6 months in the case of temporary actual residence in Member States of the
+      European Union (excluding overseas territories) of students, under the age of
+      26, when this is within the continuity of their studies under unilateral or
+      multilateral programmes or an agreement between two or more institutions of
+      higher education What are my obligations?  Correctly complete and sign an insurance
+      proposal, which consists of an administrative and medical questionnaire, except
+      in case of
+
+      ---
+
+      [2] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE Product:
+      DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [3] administrative and medical questionnaire (except in case of individual continuation
+      of a similar corporate DKV outpatient health care insurance).  Declare each
+      insurance case to DKV in writing, preferably by means of the online customer
+      portal or the smartphone application provided by DKV, using the declaration
+      form(s) provided for this purpose and in accordance with the guidelines and
+      modalities described.  Request approval from DKV prior to the rent or purchase
+      of any medical device, except for prescribed spectacle glasses or contact lenses,
+      fully non-implantable hearing aids, trusses for hernia, stockings for varicose
+      veins, orthopaedic soles, plaster casts, lumbar corsets, splints and crutches.
+       Prevent and limit the consequences of an insurance case.  Notify DKV of the
+      existence of any other agreement that may give rise to a total or partial reimbursement
+      of the actual borne costs.  Undertake all necessary steps to obtain any intervention
+      for all possible legal/statutory compensations, prior to claiming any request
+      for compensation from DKV.  Notify DKV within 30 days from the moment the conditions
+      to maintain the insurance contract are no longer fulfilled. In particular: any
+      change in actual residence or factual principal residence - any stay abroad
+      of more than 90
+
+      ---
+
+      [4] insurance proposal, which consists of an administrative and medical questionnaire
+      (except in case of individual continuation of a similar corporate DKV outpatient
+      health care insurance).  Declare each insurance case to DKV in writing, preferably
+      by means of the online customer portal or the smartphone application provided
+      by DKV, using the declaration form(s) provided for this purpose and in accordance
+      with the guidelines and modalities described.  Request approval from DKV prior
+      to the rent or purchase of any medical device, except for prescribed spectacle
+      glasses or contact lenses, fully non-implantable hearing aids, trusses for hernia,
+      stockings for varicose veins, orthopaedic soles, plaster casts, lumbar corsets,
+      splints and crutches.  Prevent and limit the consequences of an insurance case.
+       Notify DKV of the existence of any other agreement that may give rise to a
+      total or partial reimbursement of the actual borne costs.  Undertake all necessary
+      steps to obtain any intervention for all possible legal/statutory compensations,
+      prior to claiming any request for compensation from DKV.  Notify DKV within
+      30 days from the moment the conditions to maintain the insurance contract are
+      no longer fulfilled. In particular: any change in actual residence or factual
+      principal residence - any
+
+      ---
+
+      [5] insured?  Free choice of health care provider  Pre-existing diseases/symptoms,
+      except in case of individual continuation of a similar collective  Reimbursement
+      at 80% of medical costs without DKV health care insurance hospitalization 365
+      days/year, even in case of non-  Food products and food supplements, vitamins
+      intervention of the Belgian legal health insurance, and minerals, hygiene and
+      cosmetic products after a qualifying period of 3 months:  Costs of medical
+      services (visits, consultations)  Vaccination, contraception, sterilization
+       Costs of paramedical services (kinesitherapy, physiotherapy, nursing care)
+       Aesthetic treatment  Costs of pharmaceutical nature  Maintenance and repair
+      costs, usage costs and  Costs of medical devices (spectacle lenses, spare parts
+      for medical devices hearing aids, etc.)  Medical prostheses (not dental) 
+      All dental treatments  Artificial limbs  Optional annual deductible (amount
+      at the charge of the insured), identical for all family members  Services:
+       AssurPharma: sends immediately the pharmacy Are there any restrictions on
+      cover? bills to DKV ! Reimbursement of medically assisted procreation  DKV
+      App: free app for scanning and sending all subject to prior approval and reimbursement
+      from medical costs for faster processing the legal health insurance.  My DKV:
+      personal'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: How does DKV cover emergency medical care abroad?
+    answer: '# DKV Coverage for Emergency Medical Care Abroad
+
+
+      According to the provided context, DKV offers the following coverage for emergency
+      medical care abroad:
+
+
+      ## Worldwide Coverage
+
+      **For unforeseen hospitalizations:** According to [1], DKV provides worldwide
+      cover for any medically necessary, unforeseen hospitalization abroad, provided
+      the insured person does not temporarily stay abroad for more than 90 consecutive
+      days. This period extends to 6 months for students under 26 in EU Member States
+      (excluding overseas territories) when studying under bilateral or multilateral
+      programs.
+
+
+      ## Maximum Reimbursement
+
+      **Outside the EU:** According to [1], DKV reimburses up to a maximum of €300,000
+      per insurance case for hospitalizations outside the European Union.
+
+
+      ## Reporting Requirements
+
+      According to [2], policyholders must report insurance cases through the "Assistance
+      abroad" DKV ASSISTANCE cover by:
+
+      - **Telephone:** +32 2 230 31 32, within 48 hours of the start of hospitalization
+      or as soon as reasonably possible
+
+
+      ## Additional Assistance Services
+
+      According to [4], DKV Assistance includes:
+
+      - Repatriation in case of accidents/illness
+
+      - Reimbursement of medical costs for urgent, unforeseen hospitalization abroad
+      (when legal health insurance doesn''t intervene)
+
+      - Return arrangements for other insureds or minor children'
+    ground_truth: In the event of a medical emergency abroad, DKV reimburses medical
+      and hospitalisation costs without limit, provided DKV is notified within 48
+      hours of admission. Medical repatriation costs are covered up to EUR 10,000
+      per event.
+    contexts: '[1] For hospitalizations outside the European Union, DKV reimburses
+      up to a maximum of € 300.000 per insurance case.  Cover in Member States of
+      the European Union (excluding overseas territories): for any medically necessary
+      and planned hospitalization abroad, provided a prior agreement has been obtained
+      with the health insurance fund  Cover in Belgium: for outpatient consultations
+      and/or treatments in the pre- and post-hospitalization period of a covered hospitalization,
+      within the context of "Critical Illnesses", of non-medical care support within
+      the context of "Critical Illnesses", medically assisted procreation  “Assistance
+      abroad” DKV ASSISTANCE cover  Worldwide cover: for any medically necessary,
+      unforeseen hospitalization abroad provided that the insured person does not
+      temporarily stay abroad for more than 90 consecutive days. This period is extended
+      to 6 months in the case of temporary actual residence in Member States of the
+      European Union (excluding overseas territories) of students, under the age of
+      26, when this is within the continuity of their studies under unilateral or
+      multilateral programmes or an agreement between two or more institutions of
+      higher education What are my obligations?  Correctly complete and sign an insurance
+      proposal, which consists of an administrative and medical questionnaire, except
+      in case of
+
+      ---
+
+      [2] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic
+
+      ---
+
+      [3] for the “Assistance abroad” DKV ASSISTANCE cover, within 48 hours of the
+      start of a hospitalization or due to a winter sports accident on a ski slope
+      without hospitalization, or as soon as reasonably possible, (2) in writing for
+      the "Medical costs" cover and preferably by using the digital customer portal
+      (My DKV) or the smartphone application (DKV App) provided by DKV  Notify DKV
+      of the existence of any other agreement that may give rise to a total or partial
+      reimbursement of the actual borne costs  Medical and paramedical treatments,
+      medical devices, medicines, bandages and medical material on medical prescription
+      by a physician  Reimbursement of the costs listed below is subject to prior
+      approval by DKV:  Rental or purchase of medical devices, except spectacle glasses
+      or contact lenses, fully non-implantable hearing aids, trusses for hernia, stockings
+      for varicose veins, orthopedic soles, plaster casts, lumbar corsets, splints
+      and crutches;  Treatment plan with accurate cost estimate for dental treatments;
+       Accurate cost estimate for reconstructive plastic surgery. WHEN AND HOW DO
+      I PAY? DKV sends you an invitation to pay your annual premium. You can request
+      half-yearly, quarterly or monthly payments (via SEPA direct debit only) of
+
+      ---
+
+      [4] the scene of the accident to the hospital. entire hospital bill if the legal
+      health insurance does  Medical costs 30 days before and 90 days after not intervene
+      on all items of the hospital bill hospitalization or 60 days before and ! Hospitalization
+      with overnight stay in a single room: 180 days after (pre-post) a personal contribution
+      of € 150 or € 300, at the  “Critical Illnesses”: choice of the insurance taker
+      and determined at the  Medical costs of outpatient care linked to time of subscription,
+      will remain at the insured’s 33 Critical Illnesses (e.g. cancer, diabetes, charge
+      for each hospitalization. A relapse that Alzheimer''s disease, multiple sclerosis,
+      etc.) results in a new admission is considered a new  DKV Assistance: assistance
+      abroad including: hospitalization  Repatriation in case of accidents/illness
+      and ! Day-care is reimbursed in a single room at the rate death of an admission
+      to a double room  Reimbursement of medical costs of an urgent, ! When there
+      is no intervention of the legal health unforeseen hospitalization abroad insurance
+      for medicines, medical devices and  Return of other insureds or minor children
+      in prostheses, artificial limbs, bandages and medical case of hospitalization
+      of
+
+      ---
+
+      [5] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical, paramedical
+      and alternative treatments, medical devices, medicines, bandages and medical
+      material on medical prescription by a physician  Reimbursement of the costs
+      listed below is subject to prior approval by DKV:  Rental or purchase of medical
+      devices, except spectacle glasses or contact lenses, fully non-implantable hearing
+      aids, trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What dental treatments does DKV Smile insurance cover?
+    answer: 'According to the DKV Smile Premium policy [3], the following dental treatments
+      are covered:
+
+
+      **Basic Dental Care (365 days/year):**
+
+      - Curative dental care, consultations & x-rays at 80% without qualifying period
+
+      - Preventive dental care at 100% without qualifying period
+
+      - Legal co-payments and fee contract supplements remain at the insured person''s
+      expense
+
+
+      **Specialized Dental Care (365 days/year):**
+
+      - Dental treatment resulting from accident, illness, disorder, missing teeth
+      or teeth replaced by dental prosthesis at 80% without qualifying period
+
+      - Early orthodontics for children before age 9 or classic orthodontics after
+      age 21 (except in case of accident)
+
+      - Periodontal treatments after age 65 (except in case of accident)
+
+      - Tooth transplants at 80% without qualifying period
+
+      - Surgical orthopedics (osteotomies to correct abnormal position/growth) of
+      the jaw at 80% without qualifying period
+
+      - Aesthetic dental care at 80% without qualifying period
+
+
+      **Additional Requirements:**
+
+      According to [1], prior approval from DKV must be obtained before any specialized
+      dental care treatment.'
+    ground_truth: DKV Smile reimburses dental care costs at 80% up to the insured
+      annual capital, 365 days per year, even without intervention of the Belgian
+      legal health insurance. Preventive and conservative treatments are covered without
+      a qualifying period. Exclusions include aesthetic treatments, ongoing orthodontic
+      or prosthetic treatment at contract conclusion, and orthodontic treatment after
+      age 40.
+    contexts: '[1] designated accident report form at the latest within 48 hours,
+      or as soon as reasonably possible after the accident.  Request approval from
+      DKV prior to any treatment for  any accident;  all specialized dental care.
+       Execute the contract in good faith and take all reasonable measures to prevent
+      and limit the consequences of an insurance case.  Notify DKV of the existence
+      of any other agreement that may give rise to a total or partial reimbursement
+      of the actual borne costs.  Undertake all necessary steps to obtain any intervention
+      for all possible legal compensations, prior to claiming any request for compensation
+      from DKV.  Notify DKV within 30 days from the moment the conditions to maintain
+      the insurance contract are no longer fulfilled. In particular: any change in
+      actual residence or factual principal residence - any stay abroad of more than
+      90 consecutive days or any temporary stay of more than 6 months in Member States
+      of the European Union (excluding overseas territories) by students under the
+      age of 26, when they are undertaken in continuity of their studies and enter
+      into unilateral or multilateral programs or within the framework of an agreement
+      between two or
+
+      ---
+
+      [2] splints and crutches;  Treatment plan with accurate cost estimate for dental
+      treatments;  Accurate cost estimate for reconstructive plastic surgery. When
+      and how do I pay? DKV sends you an invitation to pay your annual premium. You
+      can request half-yearly, quarterly or monthly payments (via SEPA direct debit
+      only) of your premium, in which case a splitting fee will be charged. When does
+      the cover start and end? Term of the contract: lifetime cover, which cannot
+      be cancelled by DKV except for the cases provided for by law. The insurance
+      guarantee begins after issuance of the policy, after the expiration of the qualifying
+      periods and after payment of the first agreed premium. DKV may cancel the insurance
+      contract in case of non-payment of the premium. How can I cancel my contract?
+      As prescribed by law, you may terminate your insurance contract at every annual
+      renewal date by notifying DKV no later than three months before such date. The
+      notification may only be realized by means of registered letter, bailiff''s
+      writ or handover of a cancellation letter with acknowledgement of receipt. This
+      complimentary translation of an Insurance Product Information Document is provided
+      for the sole purpose of informing (potential) customers
+
+      ---
+
+      [3]  Free choice of dentist  Accident, illness, disorder, missing teeth or
+      teeth replaced by or fitted with a dental prosthesis (pre-  Basic dental care:
+      Coverage of dental costs existing condition) when concluding the insurance 365
+      days/year (legal co-payments and fee contract supplements), remaining at the
+      expense of the  Early orthodontics for children before 9 yo or classic insured
+      person after the deduction of all legal or orthodontics after 21 yo, except
+      in case of accident other compensations:  Periodontal treatments after 65 yo,
+      exc. accident  At 100% without qualifying period:  Tooth transplants  Preventive
+      dental care  Surgical orthopedics (osteotomies to correct an  At 80% without
+      qualifying period: abnormal position/growth) of the jaw  Curative dental care,
+      consultations & x-  Aesthetic dental care rays  Pharmaceuticals  Dental treatment
+      resulting from among others:  Specialized dental care: Coverage of dental costs
+       a state of intoxication, criminal intoxication or 365 days/year (legal co-payments
+      and fee similar condition resulting from products other supplements), remaining
+      at the expense of the than alcoholic insured person after the deduction of all
+      legal or  alcoholism, toxicomania, improper use of other compensations: medicines
+       At 80% without qualifying
+
+      ---
+
+      [4]  medical devices.  orthodontic and/or prosthetic treatment. Not subject
+      to any prior authorization: spectacle lenses, contact lenses, hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corset, splints and crutches.  Medical devices, medication, bandages
+      and medical material on prescription from a physician.  Each insurance claim
+      must be reported to the insurer in writing within the designated period, preferably
+      using the digital reporting tools (My DKV or DKV App), or by (electronic) mail.
+       The insured undertakes all steps to obtain reimbursement from his/her health
+      insurance fund. WHEN AND HOW DO I PAY ? DKV sends you an invitation to pay your
+      premium, which is payable at the agreed periodicity. WHEN DOES THE COVER START
+      AND END ? Term of the contract: yearly renewable contract according to the conditions
+      in force. The insurance guarantee begins after issuing of the policy, after
+      expiration of the qualifying periods and after payment of the first payment
+      of the agreed premium. The insurer may cancel the insurance contract in case
+      of non-payment of the premium. HOW CAN I CANCEL THE CONTRACT ? As prescribed
+      by law, you may terminate your insurance contract at every annual renewal date
+
+      ---
+
+      [5] Verzekeringsonderneming toegelaten onder het nr. 739, onder toezicht van
+      de Nationale Bank van België, met zetel te 1000 Brussel, Berlaimontlaan 14 Where
+      am I covered)?  Worldwide cover What are my obligations?  To benefit from
+      this insurance product, the 3 following conditions must be met: 1. Submit an
+      application within 105 days of the loss of benefiting from the collective DKV
+      dental care group insurance; 2. Have uninterruptedly been insured with one or
+      more successive health insurance contracts during 2 years preceding the loss
+      of benefiting from the collective DKV dental care insurance; 3. No discontinuity
+      between the end of the collective DKV dental care insurance and the start of
+      the individually continued DKV dental care insurance.  No medical formalities.
+       Inform the insurer in case of change of domicile and/or permanent and usual
+      residence, change in social security status or of a stay abroad for more than
+      90 consecutive days.  Prior consent of the insurer of the treatment plan for:
+       orthodontic treatment,  parodontal treatment  prosthetic treatment  Each
+      insurance claim must be reported to the insurer in writing within the designated
+      period, preferably using the digital reporting tools (My DKV or DKV App),'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: Who is eligible to take out DKV Hospi Essential?
+    answer: 'According to [1], DKV Hospi Essential is eligible for:
+
+
+      • Any natural person with domicile and factual principal residence in Belgium
+
+      • Everyone who has not reached the age of 70 when taking out the insurance contract
+
+      • Those with domicile and factual principal residence in Belgium'
+    ground_truth: DKV Hospi Essential can be taken out by any natural person who has
+      not reached the age of 70 at contract conclusion, has their domicile and principal
+      residence in Belgium, and is subject to Belgian social security.
+    contexts: '[1] Hospitalisation insurance Insurance Product Information Document
+      DKV Belgium S.A./N.V. DKV HOSPI Essential This information document is solely
+      intended to provide you a summary of the key coverages and exclusions related
+      to this product. This document is not adapted to your specific needs and the
+      information within is not exhaustive. For more information about this product,
+      your rights and obligations, consult the General and/or Particular Insurance
+      Conditions of this insurance before concluding it. These documents are available
+      at your insurance intermediary, on www.dkv.be or free of charge from DKV Belgium.
+      DKV Belgium, is a Belgian registered company, manufacturer of DKV Hospi Essential.
+      This product, subject to Belgian legislation, belongs to branch 2 ‘health’ and
+      branch 18 ‘assistance’. Quotation via your insurance intermediary and/or on
+      www.dkv.be. 31 173_EN_1_202402 WHAT IS THIS TYPE OF INSURANCE ? Individual hospitalization
+      insurance with compensatory character after intervention of the Belgian legal/statutory
+      health insurance and an assistance insurance abroad. This insurance can be concluded
+      by any natural person with domicile and factual principal residence in Belgium.
+      This insurance is for everyone who has not reached the age of 70 when taking
+      out the insurance contract, has his domicile and his factual principal residence
+      in Belgium and is
+
+      ---
+
+      [2] / emergency hospitalisation.  European Union (except overseas countries
+      and territories) in case of planned hospitalisation with prior approval of the
+      legal/statutory health insurance (“mutuelle”). What are my obligations?  Complete
+      an administrative and medical questionnaire, except in the case of:  affiliation
+      of a newborn child within 60 days of its birth in an in-force contract, provided
+      that one of its parents is insured under a DKV Hospi Premium which started prior
+      to 01/01/19;  transfer to a DKV Hospi Premium insurance after having been insured
+      for at least two continuous years in a Horizon plan.  Notify the insurer in
+      the event of a change of residence, social security status or a stay abroad
+      of more than 90 consecutive days.  The reimbursement of certain benefits is
+      subject to prior approval by the insurer :  paramedical treatments other than
+      nursing care, kinesitherapy, physiotherapy;  medical devices,  treatment plans
+      for dental and prosthetic care,  reconstructive plastic surgery. Not subject
+      to any prior approval: spectacle lenses, contact lenses, hearing aids, trusses
+      for hernia, stockings for varicose veins, orthopaedic soles, plaster casts,
+      lumbar corset, splints and crutches.  Medical adjuvants, medicines, bandages
+      and medical equipment must be prescribed
+
+      ---
+
+      [3] / emergency hospitalisation.  European Union (except overseas countries
+      and territories) in case of planned hospitalisation with prior approval of the
+      legal/statutory health insurance (“mutuelle”). What are my obligations?  Complete
+      an administrative and medical questionnaire, except in the case of:  affiliation
+      of a newborn child within 60 days of its birth in an in-force contract, provided
+      that one of its parents is insured under a DKV Hospi Premium which started prior
+      to 01/01/19;  transfer to a DKV Hospi Premium insurance after having been insured
+      for at least two continuous years in a Horizon plan.  Notify the insurer in
+      the event of a change of residence, social security status or a stay abroad
+      of more than 90 consecutive days.  The reimbursement of certain benefits is
+      subject to prior approval by the insurer :  paramedical treatments other than
+      nursing care, kinesitherapy, physiotherapy;  medical devices,  treatment plans
+      for dental and prosthetic care,  reconstructive plastic surgery. Not subject
+      to any prior approval: spectacle lenses, contact lenses, hearing aids, trusses
+      for hernia, stockings for varicose veins, orthopaedic soles, plaster casts,
+      lumbar corset, splints and crutches.  Medical adjuvants, medicines, bandages
+      and medical equipment must be prescribed
+
+      ---
+
+      [4] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Comfort This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Comfort. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 WHAT IS THIS
+      TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory character
+      after intervention of the Belgian legal/statutory health insurance and an assistance
+      insurance abroad. This insurance can be concluded by any natural person with
+      domicile and factual principal residence in Belgium. This insurance is for everyone
+      who has not reached the age of 70 when taking out the insurance contract, has
+      his domicile and his factual principal residence in Belgium and is subject
+
+      ---
+
+      [5] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What does DKV Home Care insurance cover?
+    answer: 'The provided context does not contain enough information to answer this
+      question.
+
+
+      The retrieved documents contain information about DKV Flexi Corporate, DKV Flexi
+      PRO, DKV Daily Comfort, and Plan AZ insurance products, but they do not include
+      details about a specific "DKV Home Care insurance" product or its coverage.
+      To answer your question accurately, I would need documentation that specifically
+      addresses DKV Home Care insurance coverage.'
+    ground_truth: DKV Home Care is an individual long-term care insurance that pays
+      a monthly allowance and provides specific services when the insured has a medically
+      diagnosed long-lasting and seriously reduced ability to care for themselves.
+      Coverage includes Concierge (24/7 telephone assistance and coordination of non-medical
+      care) and Care in kind (provision of non-medical home care such as home help
+      and cleaning).
+    contexts: '[1] stay abroad for more than 90 consecutive days.  Prior consent
+      of the insurer for: - paramedical treatments other than nursing care, kinesitherapy,
+      physiotherapy; - medical devices. Not subject to any prior authorization: spectacle
+      lenses, contact lenses, hearing aids, trusses for hernia, stockings for varicose
+      veins, orthopedic soles, plaster casts, lumbar corset, splints and crutches.
+       Medical devices, medication, bandages and medical material on prescription
+      from a physician.  Each insurance claim must be reported to the insurer in
+      writing within the designated period, preferably using the digital reporting
+      tools (My DKV or DKV App), or by (electronic) mail.  The insured undertakes
+      all steps to obtain reimbursement from his/her health insurance fund. WHEN AND
+      HOW DO I PAY ? DKV sends you an invitation to pay your premium, which is payable
+      at the agreed periodicity. WHEN DOES THE COVER START AND END ? Term of the contract:
+      yearly renewable contract according to the conditions in force. The insurance
+      guarantee begins after issuing of the policy and after payment of the agreed
+      premium. The insurer may cancel the insurance contract in case of non-payment
+      of the premium. HOW CAN I CANCEL THE CONTRACT ? As prescribed by law, you may
+
+      ---
+
+      [2] than 90 consecutive days.  Prior consent of the insurer for: - paramedical
+      treatments other than nursing care, kinesitherapy, physiotherapy; - medical
+      devices. Not subject to any prior authorization: spectacle glasses, contact
+      lenses, hearing aids, trusses for hernia, stockings for varicose veins, orthopedic
+      soles, plaster casts, lumbar corset, splints and crutches  Medical devices,
+      medication, bandages and medical material on prescription from a physician.
+       Each insurance claim must be reported to the insurer in writing within the
+      designated period, preferably using the digital reporting tools (My DKV or DKV
+      App), or by (electronic) mail.  The insured undertakes all steps to obtain
+      reimbursement from his/her health insurance fund. WHEN AND HOW DO I PAY ? DKV
+      sends you an invitation to pay your premium, which is payable at the agreed
+      periodicity. WHEN DOES THE COVER START AND END ? Term of the contract: yearly
+      renewable contract according to the conditions in force. The insurance guarantee
+      begins after issuing of the policy and after the expiration of the qualifying
+      periods and after payment of the agreed premium. The insurer may cancel the
+      insurance contract in case of non-payment of the premium. HOW CAN I CANCEL THE
+      CONTRACT ? As prescribed
+
+      ---
+
+      [3] administrative and medical questionnaire (except in case of individual continuation
+      of a similar corporate DKV outpatient health care insurance).  Declare each
+      insurance case to DKV in writing, preferably by means of the online customer
+      portal or the smartphone application provided by DKV, using the declaration
+      form(s) provided for this purpose and in accordance with the guidelines and
+      modalities described.  Request approval from DKV prior to the rent or purchase
+      of any medical device, except for prescribed spectacle glasses or contact lenses,
+      fully non-implantable hearing aids, trusses for hernia, stockings for varicose
+      veins, orthopaedic soles, plaster casts, lumbar corsets, splints and crutches.
+       Prevent and limit the consequences of an insurance case.  Notify DKV of the
+      existence of any other agreement that may give rise to a total or partial reimbursement
+      of the actual borne costs.  Undertake all necessary steps to obtain any intervention
+      for all possible legal/statutory compensations, prior to claiming any request
+      for compensation from DKV.  Notify DKV within 30 days from the moment the conditions
+      to maintain the insurance contract are no longer fulfilled. In particular: any
+      change in actual residence or factual principal residence - any stay abroad
+      of more than 90
+
+      ---
+
+      [4] security status or of a stay abroad for more than 90 consecutive days. 
+      Prior consent of the insurer for: - paramedical treatments other than nursing
+      care, kinesitherapy, physiotherapy; - medical devices; - orthodontic and/or
+      prosthetic treatment. Not subject to any prior authorization: spectacle glasses,
+      contact lenses, hearing aids, trusses for hernia, stockings for varicose veins,
+      orthopedic soles, plaster casts, lumbar corset, splints and crutches  Medical
+      devices, medication, bandages and medical material on prescription from a physician.
+       Each insurance claim must be reported to the insurer in writing within the
+      designated period, preferably using the digital reporting tools (My DKV or DKV
+      App), or by (electronic) mail.  The insured undertakes all steps to obtain
+      reimbursement from his/her health insurance fund. WHEN AND HOW DO I PAY ? DKV
+      sends you an invitation to pay your premium, which is payable at the agreed
+      periodicity. WHEN DOES THE COVER START AND END ? Term of the contract: yearly
+      renewable contract according to the conditions in force. The insurance guarantee
+      begins after issuing of the policy and after the expiration of the qualifying
+      periods and after payment of the agreed premium. The insurer may cancel the
+      insurance contract in case
+
+      ---
+
+      [5] insurance proposal, which consists of an administrative and medical questionnaire
+      (except in case of individual continuation of a similar corporate DKV outpatient
+      health care insurance).  Declare each insurance case to DKV in writing, preferably
+      by means of the online customer portal or the smartphone application provided
+      by DKV, using the declaration form(s) provided for this purpose and in accordance
+      with the guidelines and modalities described.  Request approval from DKV prior
+      to the rent or purchase of any medical device, except for prescribed spectacle
+      glasses or contact lenses, fully non-implantable hearing aids, trusses for hernia,
+      stockings for varicose veins, orthopaedic soles, plaster casts, lumbar corsets,
+      splints and crutches.  Prevent and limit the consequences of an insurance case.
+       Notify DKV of the existence of any other agreement that may give rise to a
+      total or partial reimbursement of the actual borne costs.  Undertake all necessary
+      steps to obtain any intervention for all possible legal/statutory compensations,
+      prior to claiming any request for compensation from DKV.  Notify DKV within
+      30 days from the moment the conditions to maintain the insurance contract are
+      no longer fulfilled. In particular: any change in actual residence or factual
+      principal residence - any'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What maternity expenses does DKV hospitalisation insurance cover?
+    answer: '# DKV Maternity Coverage
+
+
+      According to the DKV hospitalisation insurance policy, the following maternity
+      expenses are covered:
+
+
+      **Childbirth [2]:**
+
+      - Hospital childbirth costs are covered without excess, provided the insured
+      has been enrolled in the contract for at least 10 months
+
+
+      **Pregnancy expenses [2]:**
+
+      - Antenatal consultations
+
+      - Ultrasound examinations (maximum 3 per pregnancy)
+
+      - Pregnancy-related blood tests
+
+      - Reimbursement rate: 80%
+
+
+      **Extended neonatal care [2]:**
+
+      - If a newborn requires extended neonatal care, DKV covers the mother''s additional
+      hospitalisation costs if she remains hospitalised for medical reasons
+
+
+      **Home birth maternity care [1] [4]:**
+
+      - Maternity care after a (home) birth up to €500'
+    ground_truth: Childbirth costs are covered without excess, provided the insured
+      has been enrolled for at least 10 months. Antenatal consultations, up to 3 ultrasound
+      examinations per pregnancy, and pregnancy-related blood tests are reimbursed
+      at 80%. If a newborn requires extended neonatal care, the mother's additional
+      hospitalisation costs are covered if she remains hospitalised for medical reasons.
+    contexts: '[1] of medical costs for an urgent, medical material in the context
+      of pre-post and “CI” unforeseen hospitalization abroad ! Reimbursement reduced
+      by 50% for pre/post and “CI”  Return of other insured persons and underage
+      if the legal health insurance does not intervene children in case of hospitalization
+      of an insured ! Costs of a wig with a maximum of € 1.250 person ! Maternity
+      care after a (home) birth up to € 500  Services : ! Reimbursement of speech
+      therapy and medically  Payment method Medi-Card®: direct payment assisted procreation
+      subject to prior approval and of the hospital bill to the hospital reimbursement
+      from the legal health insurance  AssurPharma: automatically sends the pharmacy
+      bills to DKV Where am I covered?  "Medical costs" cover  Worldwide cover:
+      for any medically necessary, unforeseen hospitalization abroad. For hospitalizations
+      outside the European Union, DKV reimburses up to a maximum of € 300.000 per
+      insurance case.  Cover in Member States of the European Union (excluding overseas
+      territories): for any medically necessary and planned hospitalization abroad,
+      provided a prior agreement has been obtained with the health insurance fund
+       Cover in Belgium: for outpatient consultations and/or treatments in the pre-
+      and
+
+      ---
+
+      [2] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE Product:
+      DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [3] least 5 consecutive days - Transfer to the nursing home occurs within 30
+      days of hospital discharge - A medical certificate confirms the necessity of
+      the placement 5.2 Maximum duration Nursing home coverage is limited to 90 days
+      per insurance year. 5.3 Reimbursed amount DKV reimburses up to EUR 75 per day
+      in a nursing home, after deduction of the compulsory health insurance contribution.
+      ═══════════════════════════════════════════════════════════════ ARTICLE 6 —
+      MATERNITY 6.1 Childbirth Hospital childbirth costs are covered without excess,
+      provided the insured has been enrolled in the contract for at least 10 months.
+      6.2 Pregnancy expenses Antenatal consultations, ultrasound examinations (maximum
+      3 per pregnancy), and pregnancy-related blood tests are reimbursed at 80%. 6.3
+      Extended maternity stay If a newborn requires extended neonatal care, DKV covers
+      the mother''s additional hospitalisation costs if she remains hospitalised for
+      medical reasons. ═══════════════════════════════════════════════════════════════
+      ARTICLE 7 — CARE ABROAD 7.1 Emergency care In the event of a medical emergency
+      abroad, DKV reimburses medical and hospitalisation costs without limit, provided
+      DKV is notified within 48 hours of admission. 7.2 Planned care abroad Planned
+      care in another EU country is reimbursed according to Belgian reference rates.
+      Any costs in excess remain at the insured''s expense. 7.3 Repatriation Medical
+      repatriation
+
+      ---
+
+      [4] medical costs for an urgent, if the legal health insurance does not intervene
+      unforeseen hospitalization abroad ! Costs of a wig with a maximum of € 1.250
+       Return of other insured persons and underage ! Maternity care after a (home)
+      birth up to € 500 children in case of hospitalization of an insured ! Reimbursement
+      of costs of speech therapy and person medically assisted procreation subject
+      to prior  Services : approval and reimbursement from the legal health  Payment
+      method Medi-Card®: direct payment insurance of the hospital bill to the hospital
+       AssurPharma: automatically sends the pharmacy bills to DKV Where am I covered?
+       "Medical costs" cover  Worldwide cover: for any medically necessary, unforeseen
+      hospitalization abroad. For hospitalizations outside the European Union, DKV
+      reimburses up to a maximum of € 300.000 per insurance case.  Cover in Member
+      States of the European Union (excluding overseas territories): for any medically
+      necessary and planned hospitalization abroad, provided a prior agreement has
+      been obtained with the health insurance fund  Cover in Belgium: for outpatient
+      consultations and/or treatments in the pre- and post-hospitalization period
+      of a covered hospitalization, within the context of "Critical Illnesses", of
+      non-medical care support within
+
+      ---
+
+      [5] underage up to € 25.000 children in case of hospitalization of an insured
+      ! Non-medical care support related to a "CI" person up to € 250  Services :
+      ! Reimbursement at 80% of medicines, bandages and  Payment method Medi-Card®:
+      direct payment medical material in the context of pre-post and “CI” of the hospital
+      bill to the hospital ! Reimbursement reduced by 50% for pre/post and “CI” 
+      AssurPharma: automatically sends the if the legal health insurance does not
+      intervene pharmacy bills to DKV ! Costs of a wig with a maximum of € 1.250 !
+      Maternity care after a (home) birth up to € 500 ! Reimbursement of speech therapy
+      subject to prior approval and reimbursement from legal health insurance ! Reimbursement
+      of fee supplements at 100% up to 3 times the convention rate Where am I covered?
+       "Medical costs" cover  Worldwide cover: for any medically necessary, unforeseen
+      hospitalization abroad.  For hospitalizations outside the European Union, DKV
+      reimburses up to a maximum of € 300.000 per insurance case.  Cover in Member
+      States of the European Union (excluding overseas territories): for any medically
+      necessary and planned hospitalization abroad, provided a prior agreement has
+      been obtained'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: How should a hospitalisation claim be submitted to DKV?
+    answer: "According to the DKV insurance documentation, hospitalization claims\
+      \ should be submitted to DKV as follows:\n\n**For \"Assistance abroad\" DKV\
+      \ ASSISTANCE cover:** [3][4]\n• Report by **telephone on +32 2 230 31 32**\n\
+      • Within **48 hours of the start of a hospitalization** or as soon as reasonably\
+      \ possible\n\n**For \"Medical costs\" cover:** [3][4]\n• Report **in writing**\n\
+      • **Preferably using:**\n  - The digital customer portal (My DKV), or\n  - The\
+      \ smartphone application (DKV App) provided by DKV\n\nThe specific method of\
+      \ submission depends on which cover type applies to your claim. Both approaches\
+      \ are available through DKV's digital channels, with the telephone option reserved\
+      \ for urgent assistance cases abroad."
+    ground_truth: Every hospitalisation must be reported to DKV within 30 days of
+      discharge via the MyDKV portal or by registered post. Required documents include
+      a hospitalisation certificate signed by the facility, a settlement statement
+      from the compulsory health insurer, original itemised invoices, and a medical
+      report if requested. DKV undertakes to process the claim within 15 business
+      days of receiving all documents.
+    contexts: '[1] administrative and medical questionnaire (except in case of individual
+      continuation of a similar corporate DKV outpatient health care insurance). 
+      Declare each insurance case to DKV in writing, preferably by means of the online
+      customer portal or the smartphone application provided by DKV, using the declaration
+      form(s) provided for this purpose and in accordance with the guidelines and
+      modalities described.  Request approval from DKV prior to the rent or purchase
+      of any medical device, except for prescribed spectacle glasses or contact lenses,
+      fully non-implantable hearing aids, trusses for hernia, stockings for varicose
+      veins, orthopaedic soles, plaster casts, lumbar corsets, splints and crutches.
+       Prevent and limit the consequences of an insurance case.  Notify DKV of the
+      existence of any other agreement that may give rise to a total or partial reimbursement
+      of the actual borne costs.  Undertake all necessary steps to obtain any intervention
+      for all possible legal/statutory compensations, prior to claiming any request
+      for compensation from DKV.  Notify DKV within 30 days from the moment the conditions
+      to maintain the insurance contract are no longer fulfilled. In particular: any
+      change in actual residence or factual principal residence - any stay abroad
+      of more than 90
+
+      ---
+
+      [2] insurance proposal, which consists of an administrative and medical questionnaire
+      (except in case of individual continuation of a similar corporate DKV outpatient
+      health care insurance).  Declare each insurance case to DKV in writing, preferably
+      by means of the online customer portal or the smartphone application provided
+      by DKV, using the declaration form(s) provided for this purpose and in accordance
+      with the guidelines and modalities described.  Request approval from DKV prior
+      to the rent or purchase of any medical device, except for prescribed spectacle
+      glasses or contact lenses, fully non-implantable hearing aids, trusses for hernia,
+      stockings for varicose veins, orthopaedic soles, plaster casts, lumbar corsets,
+      splints and crutches.  Prevent and limit the consequences of an insurance case.
+       Notify DKV of the existence of any other agreement that may give rise to a
+      total or partial reimbursement of the actual borne costs.  Undertake all necessary
+      steps to obtain any intervention for all possible legal/statutory compensations,
+      prior to claiming any request for compensation from DKV.  Notify DKV within
+      30 days from the moment the conditions to maintain the insurance contract are
+      no longer fulfilled. In particular: any change in actual residence or factual
+      principal residence - any
+
+      ---
+
+      [3] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical, paramedical
+      and alternative treatments, medical devices, medicines, bandages and medical
+      material on medical prescription by a physician  Reimbursement of the costs
+      listed below is subject to prior approval by DKV:  Rental or purchase of medical
+      devices, except spectacle glasses or contact lenses, fully non-implantable hearing
+      aids, trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+
+      ---
+
+      [4] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic
+
+      ---
+
+      [5] care abroad, the insurance plan is also valid worldwide. What are my obligations?
+       Correctly complete and sign an insurance proposal, which consists of an administrative
+      and medical questionnaire.  Declare each insurance case to DKV in writing,
+      preferably by means of the online customer portal or the smartphone application
+      provided by DKV, using the declaration form(s) provided for this purpose and
+      in accordance with the guidelines and modalities described.  Request approval
+      from DKV prior to the rent or purchase of any medical device, except for prescribed
+      spectacle glasses or contact lenses, fully non-implantable hearing aids, trusses
+      for hernia, stockings for varicose veins, orthopaedic soles, plaster casts,
+      lumbar corsets, splints and crutches.  Prevent and limit the consequences of
+      an insurance case.  Notify DKV of the existence of any other agreement that
+      may give rise to a total or partial reimbursement of the actual borne costs.
+       Undertake all necessary steps to obtain any intervention for all possible
+      legal/statutory compensations, prior to claiming any request for compensation
+      from DKV.  Notify DKV within 30 days from the moment the conditions to maintain
+      the insurance contract are no longer fulfilled. In particular: any change in
+      actual residence or factual'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What type of insurance is DKV Hospi Essential?
+    answer: 'According to [1], DKV Hospi Essential is:
+
+
+      • **Individual hospitalization insurance** with compensatory character that
+      operates after intervention of the Belgian legal/statutory health insurance
+
+      • **Assistance insurance abroad**
+
+      • Subject to Belgian legislation, belonging to branch 2 ''health'' and branch
+      18 ''assistance''
+
+
+      The insurance is available to any natural person with domicile and factual principal
+      residence in Belgium who has not reached the age of 70 when taking out the insurance
+      contract.'
+    ground_truth: DKV Hospi Essential is an individual hospitalisation insurance with
+      a compensatory character after the intervention of the Belgian statutory health
+      insurance, combined with an assistance insurance abroad. It covers hospitalisation
+      costs for illness, accident, or childbirth, with free choice of hospital and
+      recognised healthcare provider, and reimburses actual costs including co-payments
+      and supplements.
+    contexts: '[1] Hospitalisation insurance Insurance Product Information Document
+      DKV Belgium S.A./N.V. DKV HOSPI Essential This information document is solely
+      intended to provide you a summary of the key coverages and exclusions related
+      to this product. This document is not adapted to your specific needs and the
+      information within is not exhaustive. For more information about this product,
+      your rights and obligations, consult the General and/or Particular Insurance
+      Conditions of this insurance before concluding it. These documents are available
+      at your insurance intermediary, on www.dkv.be or free of charge from DKV Belgium.
+      DKV Belgium, is a Belgian registered company, manufacturer of DKV Hospi Essential.
+      This product, subject to Belgian legislation, belongs to branch 2 ‘health’ and
+      branch 18 ‘assistance’. Quotation via your insurance intermediary and/or on
+      www.dkv.be. 31 173_EN_1_202402 WHAT IS THIS TYPE OF INSURANCE ? Individual hospitalization
+      insurance with compensatory character after intervention of the Belgian legal/statutory
+      health insurance and an assistance insurance abroad. This insurance can be concluded
+      by any natural person with domicile and factual principal residence in Belgium.
+      This insurance is for everyone who has not reached the age of 70 when taking
+      out the insurance contract, has his domicile and his factual principal residence
+      in Belgium and is
+
+      ---
+
+      [2] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Comfort This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Comfort. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 WHAT IS THIS
+      TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory character
+      after intervention of the Belgian legal/statutory health insurance and an assistance
+      insurance abroad. This insurance can be concluded by any natural person with
+      domicile and factual principal residence in Belgium. This insurance is for everyone
+      who has not reached the age of 70 when taking out the insurance contract, has
+      his domicile and his factual principal residence in Belgium and is subject
+
+      ---
+
+      [3] an in-force Horizon plan, provided that the aforementioned conditions of
+      insurability are met and the transfer takes place according to the form and
+      timeline foreseen by the Horizon plan (see T.I.C. Art. 7); (ii) for a newborn
+      child who is affiliated (within 60 days of its birth) in an in-force contract,
+      provided that one of its parents is insured under a DKV Hospi Premium plan which
+      started prior to 01/01/19; (iii) for a new staff member and/or their family
+      members who are compulsorily affiliated in an insurance contract linked to the
+      current professional activity ("open group contract"). What is insured? What
+      is not insured?  Pre-existing conditions/symptoms at the conclusion  Free
+      choice of hospital, room and medical of the insurance contract, except in the
+      case of: practitioner.  of affiliation of a newborn child within 60 days of
+       Uncapped reimbursement at 100%: birth;  Hospitalisation costs in the event
+      of illness,  transfer to DKV Hospi Premium after having accident or childbirth;
+      been insured for at least two continuous years in  Medical costs 30 days before
+      and 90 days after a Horizon plan. an hospital admission (“pre/post”);  Food
+      products and supplements, vitamins and  Medical costs
+
+      ---
+
+      [4] an in-force Horizon plan, provided that the aforementioned conditions of
+      insurability are met and the transfer takes place according to the form and
+      timeline foreseen by the Horizon plan (see T.I.C. Art. 7); (ii) for a newborn
+      child who is affiliated (within 60 days of its birth) in an in-force contract,
+      provided that one of its parents is insured under a DKV Hospi Premium plan which
+      started prior to 01/01/19; (iii) for a new staff member and/or their family
+      members who are compulsorily affiliated in an insurance contract linked to the
+      current professional activity ("open group contract"). What is insured? What
+      is not insured?  Pre-existing conditions/symptoms at the conclusion  Free
+      choice of hospital, room and medical of the insurance contract, except in the
+      case of: practitioner.  of affiliation of a newborn child within 60 days of
+       Uncapped reimbursement at 100%: birth;  Hospitalisation costs in the event
+      of illness,  transfer to DKV Hospi Premium after having accident or childbirth;
+      been insured for at least two continuous years in  Medical costs 30 days before
+      and 90 days after a Horizon plan. an hospital admission (“pre/post”);  Food
+      products and supplements, vitamins and  Medical costs
+
+      ---
+
+      [5] insurance proposal, which consists of an administrative and medical questionnaire
+      (except in case of individual continuation of a similar corporate DKV outpatient
+      health care insurance).  Declare each insurance case to DKV in writing, preferably
+      by means of the online customer portal or the smartphone application provided
+      by DKV, using the declaration form(s) provided for this purpose and in accordance
+      with the guidelines and modalities described.  Request approval from DKV prior
+      to the rent or purchase of any medical device, except for prescribed spectacle
+      glasses or contact lenses, fully non-implantable hearing aids, trusses for hernia,
+      stockings for varicose veins, orthopaedic soles, plaster casts, lumbar corsets,
+      splints and crutches.  Prevent and limit the consequences of an insurance case.
+       Notify DKV of the existence of any other agreement that may give rise to a
+      total or partial reimbursement of the actual borne costs.  Undertake all necessary
+      steps to obtain any intervention for all possible legal/statutory compensations,
+      prior to claiming any request for compensation from DKV.  Notify DKV within
+      30 days from the moment the conditions to maintain the insurance contract are
+      no longer fulfilled. In particular: any change in actual residence or factual
+      principal residence - any'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What does DKV Hospi Essential not cover?
+    answer: 'The provided context does not contain enough information to answer this
+      question.
+
+
+      While the retrieved context includes information about DKV Hospi Essential''s
+      covered treatments and what requires prior approval [2], it does not provide
+      a comprehensive list of exclusions or what is explicitly not covered by this
+      insurance product. To find this information, you would need to consult the General
+      and/or Particular Insurance Conditions of DKV Hospi Essential, which according
+      to [1] are available at your insurance intermediary, on www.dkv.be, or free
+      of charge from DKV Belgium.'
+    ground_truth: 'DKV Hospi Essential does not cover: stays in a single room during
+      day-care, pre-existing diseases or symptoms at contract conclusion (except for
+      continuation of a collective DKV plan), food products or food supplements, vitamins
+      and minerals, hygiene and cosmetic products, and costs related to vaccination,
+      contraception, and sterilization.'
+    contexts: '[1] Hospitalisation insurance Insurance Product Information Document
+      DKV Belgium S.A./N.V. DKV HOSPI Essential This information document is solely
+      intended to provide you a summary of the key coverages and exclusions related
+      to this product. This document is not adapted to your specific needs and the
+      information within is not exhaustive. For more information about this product,
+      your rights and obligations, consult the General and/or Particular Insurance
+      Conditions of this insurance before concluding it. These documents are available
+      at your insurance intermediary, on www.dkv.be or free of charge from DKV Belgium.
+      DKV Belgium, is a Belgian registered company, manufacturer of DKV Hospi Essential.
+      This product, subject to Belgian legislation, belongs to branch 2 ‘health’ and
+      branch 18 ‘assistance’. Quotation via your insurance intermediary and/or on
+      www.dkv.be. 31 173_EN_1_202402 WHAT IS THIS TYPE OF INSURANCE ? Individual hospitalization
+      insurance with compensatory character after intervention of the Belgian legal/statutory
+      health insurance and an assistance insurance abroad. This insurance can be concluded
+      by any natural person with domicile and factual principal residence in Belgium.
+      This insurance is for everyone who has not reached the age of 70 when taking
+      out the insurance contract, has his domicile and his factual principal residence
+      in Belgium and is
+
+      ---
+
+      [2] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical and
+      paramedical treatments, medical devices, medicines, bandages and medical material
+      on medical prescription by a physician  Reimbursement of the costs listed below
+      is subject to prior approval by DKV:  Rental or purchase of medical devices,
+      except spectacle glasses or contact lenses, fully non-implantable hearing aids,
+      trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+      plastic
+
+      ---
+
+      [3] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Comfort This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Comfort. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 WHAT IS THIS
+      TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory character
+      after intervention of the Belgian legal/statutory health insurance and an assistance
+      insurance abroad. This insurance can be concluded by any natural person with
+      domicile and factual principal residence in Belgium. This insurance is for everyone
+      who has not reached the age of 70 when taking out the insurance contract, has
+      his domicile and his factual principal residence in Belgium and is subject
+
+      ---
+
+      [4] DKV  Report any insurance case to DKV in accordance with the guidelines,
+      terms and modalities described in the General Insurance Conditions: (1) by telephone
+      on +32 2 230 31 32 for the “Assistance abroad” DKV ASSISTANCE cover, within
+      48 hours of the start of a hospitalization or due to a winter sports accident
+      on a ski slope without hospitalization, or as soon as reasonably possible, (2)
+      in writing for the "Medical costs" cover and preferably by using the digital
+      customer portal (My DKV) or the smartphone application (DKV App) provided by
+      DKV  Notify DKV of the existence of any other agreement that may give rise
+      to a total or partial reimbursement of the actual borne costs  Medical, paramedical
+      and alternative treatments, medical devices, medicines, bandages and medical
+      material on medical prescription by a physician  Reimbursement of the costs
+      listed below is subject to prior approval by DKV:  Rental or purchase of medical
+      devices, except spectacle glasses or contact lenses, fully non-implantable hearing
+      aids, trusses for hernia, stockings for varicose veins, orthopedic soles, plaster
+      casts, lumbar corsets, splints and crutches;  Treatment plan with accurate
+      cost estimate for dental treatments;  Accurate cost estimate for reconstructive
+
+      ---
+
+      [5] Hospitalization insurance Insurance Product Information Document DKV B elgium
+      S.A./N.V. | Rue de Loxum 25 | 1000 Brussels | Belgium www.d kv.be | R.P.M 0414858607
+      | Insu rance company registered DKV PREMIUM CORPORATE under no 739 under the
+      supervision of the National Bank of Belgium This information document is solely
+      intended to provide you a summary of the key coverages and exclusions related
+      to this product. This document is not adapted to your specific needs and the
+      information within is not exhaustive. For more information about this product,
+      your rights and obligations, consult the General, Tariff and/or Particular Insurance
+      Conditions of this insurance before concluding it. These documents are available
+      at your insurance intermediary, on www.dkv.be or free of charge from DKV Belgium.
+      DKV Belgium, is a Belgian registered company, manufacturer of DKV Premium Corporate.
+      This product, subject to Belgian legislation, belongs to branch 2 ‘health’ and
+      18 ‘Assistance’. Quotation via your insurance intermediary and/or on www.dkv.be.
+      37 104_EN_7_202210 WHAT IS THIS TYPE OF INSURANCE ? Collective hospitalization
+      insurance with compensatory character after intervention of the Belgian legal
+      health insurance. This insurance is aimed at all enterprises with minimum 20
+      employees, established in Belgium. The staff members have their domicile'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What type of insurance is DKV Hospi Premium?
+    answer: "According to [1] and [2], DKV Hospi Premium is an **individual hospitalization\
+      \ insurance** with the following key characteristics:\n\n• **Compensatory character**:\
+      \ It provides coverage after intervention of the Belgian legal/statutory health\
+      \ insurance\n\n• **Assistance insurance abroad**: It includes assistance coverage\
+      \ when traveling abroad\n\n• **Eligibility**: Can be concluded by any natural\
+      \ person with domicile and factual principal residence in Belgium, and for those\
+      \ who have not reached the age of 70 when taking out the insurance contract\n\
+      \n• **Regulatory classification**: Subject to Belgian legislation, it belongs\
+      \ to branch 2 'health' and branch 18 'assistance'\n\n• **Key coverages**:\n\
+      \  - Free choice of hospital, room, and medical practitioner\n  - Uncapped reimbursement\
+      \ at 100% for hospitalization costs in case of illness, accident, or childbirth\n\
+      \  - Medical costs 30 days before and 90 days after hospital admission (\"pre/post\"\
+      )"
+    ground_truth: DKV Hospi Premium is an indemnity-based retail hospitalisation insurance,
+      complementary to the Belgian statutory health insurance. It provides uncapped
+      reimbursement at 100% for hospitalisation costs. It can only be taken out as
+      a destination plan from an in-force Horizon plan, for a newborn affiliated within
+      60 days of birth when a parent holds DKV Hospi Premium, or for new staff members
+      in an open group contract.
+    contexts: '[1] an in-force Horizon plan, provided that the aforementioned conditions
+      of insurability are met and the transfer takes place according to the form and
+      timeline foreseen by the Horizon plan (see T.I.C. Art. 7); (ii) for a newborn
+      child who is affiliated (within 60 days of its birth) in an in-force contract,
+      provided that one of its parents is insured under a DKV Hospi Premium plan which
+      started prior to 01/01/19; (iii) for a new staff member and/or their family
+      members who are compulsorily affiliated in an insurance contract linked to the
+      current professional activity ("open group contract"). What is insured? What
+      is not insured?  Pre-existing conditions/symptoms at the conclusion  Free
+      choice of hospital, room and medical of the insurance contract, except in the
+      case of: practitioner.  of affiliation of a newborn child within 60 days of
+       Uncapped reimbursement at 100%: birth;  Hospitalisation costs in the event
+      of illness,  transfer to DKV Hospi Premium after having accident or childbirth;
+      been insured for at least two continuous years in  Medical costs 30 days before
+      and 90 days after a Horizon plan. an hospital admission (“pre/post”);  Food
+      products and supplements, vitamins and  Medical costs
+
+      ---
+
+      [2] an in-force Horizon plan, provided that the aforementioned conditions of
+      insurability are met and the transfer takes place according to the form and
+      timeline foreseen by the Horizon plan (see T.I.C. Art. 7); (ii) for a newborn
+      child who is affiliated (within 60 days of its birth) in an in-force contract,
+      provided that one of its parents is insured under a DKV Hospi Premium plan which
+      started prior to 01/01/19; (iii) for a new staff member and/or their family
+      members who are compulsorily affiliated in an insurance contract linked to the
+      current professional activity ("open group contract"). What is insured? What
+      is not insured?  Pre-existing conditions/symptoms at the conclusion  Free
+      choice of hospital, room and medical of the insurance contract, except in the
+      case of: practitioner.  of affiliation of a newborn child within 60 days of
+       Uncapped reimbursement at 100%: birth;  Hospitalisation costs in the event
+      of illness,  transfer to DKV Hospi Premium after having accident or childbirth;
+      been insured for at least two continuous years in  Medical costs 30 days before
+      and 90 days after a Horizon plan. an hospital admission (“pre/post”);  Food
+      products and supplements, vitamins and  Medical costs
+
+      ---
+
+      [3] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Comfort This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Comfort. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 WHAT IS THIS
+      TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory character
+      after intervention of the Belgian legal/statutory health insurance and an assistance
+      insurance abroad. This insurance can be concluded by any natural person with
+      domicile and factual principal residence in Belgium. This insurance is for everyone
+      who has not reached the age of 70 when taking out the insurance contract, has
+      his domicile and his factual principal residence in Belgium and is subject
+
+      ---
+
+      [4] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Essential This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Essential. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 173_EN_1_202402
+      WHAT IS THIS TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory
+      character after intervention of the Belgian legal/statutory health insurance
+      and an assistance insurance abroad. This insurance can be concluded by any natural
+      person with domicile and factual principal residence in Belgium. This insurance
+      is for everyone who has not reached the age of 70 when taking out the insurance
+      contract, has his domicile and his factual principal residence in Belgium and
+      is
+
+      ---
+
+      [5] Hospitalisation insurance Insurance Product Information Document DKV Belgium
+      S.A./N.V. DKV HOSPI Premium + This information document is solely intended to
+      provide you a summary of the key coverages and exclusions related to this product.
+      This document is not adapted to your specific needs and the information within
+      is not exhaustive. For more information about this product, your rights and
+      obligations, consult the General and/or Particular Insurance Conditions of this
+      insurance before concluding it. These documents are available at your insurance
+      intermediary, on www.dkv.be or free of charge from DKV Belgium. DKV Belgium,
+      is a Belgian registered company, manufacturer of DKV Hospi Premium +. This product,
+      subject to Belgian legislation, belongs to branch 2 ‘health’ and branch 18 ‘assistance’.
+      Quotation via your insurance intermediary and/or on www.dkv.be. 31 175_EN_1_202402
+      WHAT IS THIS TYPE OF INSURANCE ? Individual hospitalization insurance with compensatory
+      character after intervention of the Belgian legal/statutory health insurance
+      and an assistance insurance abroad. This insurance can be concluded by any natural
+      person with domicile and factual principal residence in Belgium. This insurance
+      is for everyone who has not reached the age of 70 when taking out the insurance
+      contract, has his domicile and his factual principal residence in Belgium'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What personal contribution applies when staying in a single room under
+      DKV hospitalisation insurance?
+    answer: 'According to the provided context, the personal contribution for single
+      room stays under DKV hospitalisation insurance varies depending on the specific
+      product:
+
+
+      **DKV Plus Hospitalisation [1]:**
+
+      - Accommodation costs are reimbursed up to EUR 150 per day for single rooms
+
+      - A personal contribution of 15% applies to honorary supplements exceeding EUR
+      300 per stay [4]
+
+
+      **DKV Flexi PRO [3]:**
+
+      - A personal contribution (deductible) of either **EUR 150 or EUR 300 per hospitalization**
+      applies, depending on the choice made by the insurance taker at the time of
+      subscription
+
+      - A relapse resulting in a new admission is considered a new hospitalization,
+      meaning a new personal contribution applies
+
+
+      **Note:** The exact personal contribution amount depends on which DKV hospitalization
+      product you have chosen. The context indicates that the specific amounts are
+      detailed in the Particular Conditions of Insurance for each product variant.'
+    ground_truth: When hospitalised in a single room, the insured bears 15% of honorary
+      supplements exceeding EUR 300 per stay, in addition to the annual excess of
+      EUR 250. Shared ward accommodation is reimbursed in full.
+    contexts: '[1] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE
+      Product: DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [2] insured person if he/she chooses for a nursing care) single room (co-payment).
+      In the event of hospitalization  Alternative medicine (homeopathy, in a partner
+      hospital*, these supplements are fully osteopathy, acupuncture, chiropractic)
+      covered by DKV.  Costs of pharmaceuticals nature ! A personal contribution
+      (i.e. a deductible per insurance  Costs of medical devices (glasses, hearing
+      case), of which the amount is indicated in the Particular aids, etc) Conditions
+      of Insurance, is applied per each  Medical prostheses & of artificial limbs
+      hospitalization in a single room. A relapse that results in  Transport costs
+      in Belgium in case of a a new admission is considered as a new hospitalization.
+      hospitalization: by ambulance to and from ! The annual updating of the list
+      of "Partner Hospitals" as the hospital, as well as the transfer to well as the
+      choice of a hospital that is (or is not) included another hospital. By helicopter
+      from the on this list may have consequences on the modalities of scene of the
+      accident to the hospital. compensation when the insured person chooses a  Reimbursement
+      related to medical costs single room. 30 days before and 120 days after ! When
+      there is no intervention of
+
+      ---
+
+      [3] the scene of the accident to the hospital. entire hospital bill if the legal
+      health insurance does  Medical costs 30 days before and 90 days after not intervene
+      on all items of the hospital bill hospitalization or 60 days before and ! Hospitalization
+      with overnight stay in a single room: 180 days after (pre-post) a personal contribution
+      of € 150 or € 300, at the  “Critical Illnesses”: choice of the insurance taker
+      and determined at the  Medical costs of outpatient care linked to time of subscription,
+      will remain at the insured’s 33 Critical Illnesses (e.g. cancer, diabetes, charge
+      for each hospitalization. A relapse that Alzheimer''s disease, multiple sclerosis,
+      etc.) results in a new admission is considered a new  DKV Assistance: assistance
+      abroad including: hospitalization  Repatriation in case of accidents/illness
+      and ! Day-care is reimbursed in a single room at the rate death of an admission
+      to a double room  Reimbursement of medical costs of an urgent, ! When there
+      is no intervention of the legal health unforeseen hospitalization abroad insurance
+      for medicines, medical devices and  Return of other insureds or minor children
+      in prostheses, artificial limbs, bandages and medical case of hospitalization
+      of
+
+      ---
+
+      [4] Fees charged by physicians, surgeons, anaesthetists, and other recognised
+      practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate, plus an
+      honorary supplement capped at 200% of the agreed rate. 3.3 Medication and medical
+      equipment Medications prescribed during hospitalisation and necessary medical
+      equipment are reimbursed at 100% of actual costs, with no excess. 3.4 Diagnostic
+      examinations Laboratory, radiological, and medical imaging examinations performed
+      in a hospital setting are reimbursed in full. ═══════════════════════════════════════════════════════════════
+      ARTICLE 4 — EXCESS AND PERSONAL CONTRIBUTION 4.1 Annual excess An annual excess
+      of EUR 250 per insured person applies to hospitalisation costs. This excess
+      rises to EUR 500 for hospitalisations related to elective pregnancy or non-reconstructive
+      cosmetic surgery. 4.2 No excess for children The excess does not apply to insured
+      children under 16 years of age. 4.3 Personal contribution for single room When
+      hospitalised in a single room, the insured bears 15% of honorary supplements
+      exceeding EUR 300 per stay. ═══════════════════════════════════════════════════════════════
+      ARTICLE 5 — STAY IN A NURSING HOME 5.1 Conditions for coverage DKV covers nursing
+      home (RVT/MRS) accommodation costs provided that: - The preceding hospitalisation
+      lasted at least 5 consecutive days - Transfer to the nursing home occurs within
+      30 days of hospital discharge - A medical
+
+      ---
+
+      [5] For hospitalizations outside the European Union, DKV reimburses up to a
+      maximum of € 300.000 per insurance case.  Cover in Member States of the European
+      Union (excluding overseas territories): for any medically necessary and planned
+      hospitalization abroad, provided a prior agreement has been obtained with the
+      health insurance fund  Cover in Belgium: for outpatient consultations and/or
+      treatments in the pre- and post-hospitalization period of a covered hospitalization,
+      within the context of "Critical Illnesses", of non-medical care support within
+      the context of "Critical Illnesses", medically assisted procreation  “Assistance
+      abroad” DKV ASSISTANCE cover  Worldwide cover: for any medically necessary,
+      unforeseen hospitalization abroad provided that the insured person does not
+      temporarily stay abroad for more than 90 consecutive days. This period is extended
+      to 6 months in the case of temporary actual residence in Member States of the
+      European Union (excluding overseas territories) of students, under the age of
+      26, when this is within the continuity of their studies under unilateral or
+      multilateral programmes or an agreement between two or more institutions of
+      higher education What are my obligations?  Correctly complete and sign an insurance
+      proposal, which consists of an administrative and medical questionnaire, except
+      in case of'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'
+- vars:
+    question: What planned care abroad coverage does DKV hospitalisation insurance
+      provide?
+    answer: '# DKV Planned Care Abroad Coverage
+
+
+      According to [1] and [2], DKV Hospitalisation Insurance provides the following
+      coverage for planned care abroad:
+
+
+      **In European Union Member States:**
+
+      - Coverage for any medically necessary and planned hospitalization abroad
+
+      - **Requirement:** Prior agreement must be obtained with the health insurance
+      fund before receiving treatment
+
+
+      **Additional Coverage:**
+
+      - Coverage extends to outpatient consultations and/or treatments in the pre-
+      and post-hospitalization period of a covered hospitalization in Belgium, within
+      the context of "Critical Illnesses" [1] and [2]
+
+
+      **Important Limitation:**
+
+      - For hospitalizations outside the European Union, DKV reimburses up to a maximum
+      of €300,000 per insurance case [1] and [2]
+
+
+      The key distinction is that planned hospitalizations in EU Member States require
+      prior approval from the health insurance fund, whereas coverage outside the
+      EU is limited to emergencies and is capped at €300,000.'
+    ground_truth: Planned care in another EU country is reimbursed according to Belgian
+      reference rates. Any costs in excess of those rates remain at the insured's
+      expense. Emergency care abroad is reimbursed without limit, provided DKV is
+      notified within 48 hours of admission.
+    contexts: '[1] For hospitalizations outside the European Union, DKV reimburses
+      up to a maximum of € 300.000 per insurance case.  Cover in Member States of
+      the European Union (excluding overseas territories): for any medically necessary
+      and planned hospitalization abroad, provided a prior agreement has been obtained
+      with the health insurance fund  Cover in Belgium: for outpatient consultations
+      and/or treatments in the pre- and post-hospitalization period of a covered hospitalization,
+      within the context of "Critical Illnesses", of non-medical care support within
+      the context of "Critical Illnesses", medically assisted procreation  “Assistance
+      abroad” DKV ASSISTANCE cover  Worldwide cover: for any medically necessary,
+      unforeseen hospitalization abroad provided that the insured person does not
+      temporarily stay abroad for more than 90 consecutive days. This period is extended
+      to 6 months in the case of temporary actual residence in Member States of the
+      European Union (excluding overseas territories) of students, under the age of
+      26, when this is within the continuity of their studies under unilateral or
+      multilateral programmes or an agreement between two or more institutions of
+      higher education What are my obligations?  Correctly complete and sign an insurance
+      proposal, which consists of an administrative and medical questionnaire, except
+      in case of
+
+      ---
+
+      [2] Bld de Berlaimont 14 | Verzekeringsonderneming toegelaten onder het nr.
+      739, onder toezicht van de Nationale Bank van België, met zetel te 1000 Brussel,
+      Berlaimontlaan 14 WHERE AM I COVERED?  "Medical costs" cover  Worldwide cover:
+      for any medically necessary, unforeseen hospitalization abroad. For hospitalizations
+      outside the European Union, DKV reimburses up to a maximum of € 300.000 per
+      insurance case.  Cover in Member States of the European Union (excluding overseas
+      territories): for any medically necessary and planned hospitalization abroad,
+      provided a prior agreement has been obtained with the health insurance fund
+       Cover in Belgium: for outpatient consultations and/or treatments in the pre-
+      and post-hospitalization period of a covered hospitalization, within the context
+      of "Critical Illnesses", of non-medical care support within the context of "Critical
+      Illnesses", medically assisted procreation  “Assistance abroad” DKV ASSISTANCE
+      cover Worldwide cover: for any medically necessary, unforeseen hospitalization
+      abroad provided that the insured person does not temporarily stay abroad for
+      more than 90 consecutive days. This period is extended to 6 months in the case
+      of temporary actual residence in Member States of the European Union (excluding
+      overseas territories) of students, under the age of 26, when this is within
+      the continuity
+
+      ---
+
+      [3] DKV BELGIUM — GENERAL TERMS AND CONDITIONS: HOSPITALISATION INSURANCE Product:
+      DKV Plus Hospitalisation | Version: 2024-01 | Language: EN ═══════════════════════════════════════════════════════════════
+      ARTICLE 1 — PURPOSE OF THE CONTRACT This insurance policy covers medical and
+      hospitalisation expenses incurred by the insured as a result of illness, accident,
+      or maternity, in accordance with the conditions defined in this document. DKV
+      undertakes to reimburse actual expenses up to the maximum amounts set out in
+      the schedule of benefits annexed to this contract. ═══════════════════════════════════════════════════════════════
+      ARTICLE 2 — SCOPE OF COVERAGE 2.1 Territorial scope Coverage applies to care
+      received in Belgium and abroad, subject to the special provisions regarding
+      care abroad (see Article 7). 2.2 Insured persons The following persons are covered
+      as expressly designated in the special conditions: the policyholder, their legal
+      or cohabiting partner, and dependent children up to age 25. ═══════════════════════════════════════════════════════════════
+      ARTICLE 3 — COVERED HOSPITALISATION EXPENSES 3.1 Accommodation costs DKV reimburses
+      single-room accommodation costs up to EUR 150 per day. For a double room, reimbursement
+      is capped at EUR 100 per day. Shared ward accommodation is reimbursed in full.
+      3.2 Medical fees Fees charged by physicians, surgeons, anaesthetists, and other
+      recognised practitioners are reimbursed based on the NIHDI (INAMI/RIZIV) rate,
+      plus an
+
+      ---
+
+      [4] the scene of the accident to the hospital. entire hospital bill if the legal
+      health insurance does  Medical costs 30 days before and 90 days after not intervene
+      on all items of the hospital bill hospitalization or 60 days before and ! Hospitalization
+      with overnight stay in a single room: 180 days after (pre-post) a personal contribution
+      of € 150 or € 300, at the  “Critical Illnesses”: choice of the insurance taker
+      and determined at the  Medical costs of outpatient care linked to time of subscription,
+      will remain at the insured’s 33 Critical Illnesses (e.g. cancer, diabetes, charge
+      for each hospitalization. A relapse that Alzheimer''s disease, multiple sclerosis,
+      etc.) results in a new admission is considered a new  DKV Assistance: assistance
+      abroad including: hospitalization  Repatriation in case of accidents/illness
+      and ! Day-care is reimbursed in a single room at the rate death of an admission
+      to a double room  Reimbursement of medical costs of an urgent, ! When there
+      is no intervention of the legal health unforeseen hospitalization abroad insurance
+      for medicines, medical devices and  Return of other insureds or minor children
+      in prostheses, artificial limbs, bandages and medical case of hospitalization
+      of
+
+      ---
+
+      [5] / emergency hospitalisation.  European Union (except overseas countries
+      and territories) in case of planned hospitalisation with prior approval of the
+      legal/statutory health insurance (“mutuelle”). What are my obligations?  Complete
+      an administrative and medical questionnaire, except in the case of:  affiliation
+      of a newborn child within 60 days of its birth in an in-force contract, provided
+      that one of its parents is insured under a DKV Hospi Premium which started prior
+      to 01/01/19;  transfer to a DKV Hospi Premium insurance after having been insured
+      for at least two continuous years in a Horizon plan.  Notify the insurer in
+      the event of a change of residence, social security status or a stay abroad
+      of more than 90 consecutive days.  The reimbursement of certain benefits is
+      subject to prior approval by the insurer :  paramedical treatments other than
+      nursing care, kinesitherapy, physiotherapy;  medical devices,  treatment plans
+      for dental and prosthetic care,  reconstructive plastic surgery. Not subject
+      to any prior approval: spectacle lenses, contact lenses, hearing aids, trusses
+      for hernia, stockings for varicose veins, orthopaedic soles, plaster casts,
+      lumbar corset, splints and crutches.  Medical adjuvants, medicines, bandages
+      and medical equipment must be prescribed'
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate this RAG system answer.
+
+      Question: {{question}}
+
+      Ground truth: {{ground_truth}}
+
+      Retrieved context:
+
+      {{contexts}}
+
+
+      The answer PASSES if it is both:
+
+      1. Faithful to the context (no facts invented outside the context)
+
+      2. Relevant and useful for the question asked'

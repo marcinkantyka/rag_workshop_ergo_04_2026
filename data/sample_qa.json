@@ -1,0 +1,126 @@
+{
+  "description": "Ground-truth Q&A pairs for RAG evaluation. Answers are based on DKV Belgium insurance product documents in the workshop corpus.",
+  "version": "2.0",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What hospitalization expenses does DKV cover?",
+      "ground_truth": "DKV hospitalisation insurance covers accommodation costs (single room up to EUR 150 per day, double room up to EUR 100 per day, shared ward in full), medical fees from physicians and surgeons based on the NIHDI rate plus supplements capped at 200%, medications and medical equipment at 100% of actual costs, and diagnostic examinations in full.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "What is the annual excess for DKV hospitalisation insurance?",
+      "ground_truth": "An annual excess of EUR 250 per insured person applies to hospitalisation costs. This rises to EUR 500 for hospitalisations related to elective pregnancy or non-reconstructive cosmetic surgery. The excess does not apply to insured children under 16 years of age.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "What nursing home coverage does DKV provide after a hospital stay?",
+      "ground_truth": "DKV covers nursing home accommodation costs up to EUR 75 per day, limited to 90 days per insurance year, provided the preceding hospitalisation lasted at least 5 consecutive days, transfer to the nursing home occurs within 30 days of hospital discharge, and a medical certificate confirms the necessity.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "What are the main exclusions under DKV hospitalisation insurance?",
+      "ground_truth": "DKV hospitalisation insurance does not cover: aesthetic treatments with no reconstructive purpose, detoxification treatments not medically prescribed, dental care (unless resulting from a covered accident), experimental treatments not recognised by NIHDI, accidents from professional or high-risk competitive sport, and pre-existing conditions not declared at enrolment.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "How does DKV cover emergency medical care abroad?",
+      "ground_truth": "In the event of a medical emergency abroad, DKV reimburses medical and hospitalisation costs without limit, provided DKV is notified within 48 hours of admission. Medical repatriation costs are covered up to EUR 10,000 per event.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "What dental treatments does DKV Smile insurance cover?",
+      "ground_truth": "DKV Smile reimburses dental care costs at 80% up to the insured annual capital, 365 days per year, even without intervention of the Belgian legal health insurance. Preventive and conservative treatments are covered without a qualifying period. Exclusions include aesthetic treatments, ongoing orthodontic or prosthetic treatment at contract conclusion, and orthodontic treatment after age 40.",
+      "relevant_topics": [
+        "32206_DKV Smile_IPID_EN_6_202212_RV"
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Who is eligible to take out DKV Hospi Essential?",
+      "ground_truth": "DKV Hospi Essential can be taken out by any natural person who has not reached the age of 70 at contract conclusion, has their domicile and principal residence in Belgium, and is subject to Belgian social security.",
+      "relevant_topics": [
+        "31173_DKV Hospi Essential_IPID_EN_1_202402_RV_20241213"
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "What does DKV Home Care insurance cover?",
+      "ground_truth": "DKV Home Care is an individual long-term care insurance that pays a monthly allowance and provides specific services when the insured has a medically diagnosed long-lasting and seriously reduced ability to care for themselves. Coverage includes Concierge (24/7 telephone assistance and coordination of non-medical care) and Care in kind (provision of non-medical home care such as home help and cleaning).",
+      "relevant_topics": [
+        "33001_DKV Home Care_IPID_EN_3_202201_RV_20220727_FIN Produit"
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "What maternity expenses does DKV hospitalisation insurance cover?",
+      "ground_truth": "Childbirth costs are covered without excess, provided the insured has been enrolled for at least 10 months. Antenatal consultations, up to 3 ultrasound examinations per pregnancy, and pregnancy-related blood tests are reimbursed at 80%. If a newborn requires extended neonatal care, the mother's additional hospitalisation costs are covered if she remains hospitalised for medical reasons.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "How should a hospitalisation claim be submitted to DKV?",
+      "ground_truth": "Every hospitalisation must be reported to DKV within 30 days of discharge via the MyDKV portal or by registered post. Required documents include a hospitalisation certificate signed by the facility, a settlement statement from the compulsory health insurer, original itemised invoices, and a medical report if requested. DKV undertakes to process the claim within 15 business days of receiving all documents.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "What type of insurance is DKV Hospi Essential?",
+      "ground_truth": "DKV Hospi Essential is an individual hospitalisation insurance with a compensatory character after the intervention of the Belgian statutory health insurance, combined with an assistance insurance abroad. It covers hospitalisation costs for illness, accident, or childbirth, with free choice of hospital and recognised healthcare provider, and reimburses actual costs including co-payments and supplements.",
+      "relevant_topics": [
+        "31173_DKV Hospi Essential_IPID_EN_1_202402_RV_20241213"
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "What does DKV Hospi Essential not cover?",
+      "ground_truth": "DKV Hospi Essential does not cover: stays in a single room during day-care, pre-existing diseases or symptoms at contract conclusion (except for continuation of a collective DKV plan), food products or food supplements, vitamins and minerals, hygiene and cosmetic products, and costs related to vaccination, contraception, and sterilization.",
+      "relevant_topics": [
+        "31173_DKV Hospi Essential_IPID_EN_1_202402_RV_20241213"
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "What type of insurance is DKV Hospi Premium?",
+      "ground_truth": "DKV Hospi Premium is an indemnity-based retail hospitalisation insurance, complementary to the Belgian statutory health insurance. It provides uncapped reimbursement at 100% for hospitalisation costs. It can only be taken out as a destination plan from an in-force Horizon plan, for a newborn affiliated within 60 days of birth when a parent holds DKV Hospi Premium, or for new staff members in an open group contract.",
+      "relevant_topics": [
+        "31169_DKV Hospi Premium_IPID_EN_3_202201_RV_20251119"
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "What personal contribution applies when staying in a single room under DKV hospitalisation insurance?",
+      "ground_truth": "When hospitalised in a single room, the insured bears 15% of honorary supplements exceeding EUR 300 per stay, in addition to the annual excess of EUR 250. Shared ward accommodation is reimbursed in full.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "What planned care abroad coverage does DKV hospitalisation insurance provide?",
+      "ground_truth": "Planned care in another EU country is reimbursed according to Belgian reference rates. Any costs in excess of those rates remain at the insured's expense. Emergency care abroad is reimbursed without limit, provided DKV is notified within 48 hours of admission.",
+      "relevant_topics": [
+        "dkv_hospitalisation_en"
+      ]
+    }
+  ]
+}
