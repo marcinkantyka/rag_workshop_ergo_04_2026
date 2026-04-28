@@ -3,6 +3,7 @@ services:
   # Downloads ML models into a shared volume on first run, then exits.
   # Subsequent starts skip this entirely (models already cached).
   model-init:
+    build: .
     image: lukasstuetzel/rag_workshop_ergo:latest
     container_name: rag-model-init
     volumes:
@@ -12,6 +13,7 @@ services:
     restart: "no"
 
   workshop:
+    build: .
     image: lukasstuetzel/rag_workshop_ergo:latest
     container_name: rag-workshop
     depends_on:
